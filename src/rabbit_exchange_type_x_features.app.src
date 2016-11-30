@@ -1,0 +1,10 @@
+{application, rabbit_exchange_type_x_features,
+ [
+  {description, "RabbitMQ X-Features Exchange Plugin"},
+  {vsn, "3.6.5"},
+  {modules, []},
+  {registered, []},
+  {env, []},
+  {applications, [kernel, stdlib, rabbit_common, rabbit]}
+ ]
+}.
