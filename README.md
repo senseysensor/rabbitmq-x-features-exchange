@@ -17,6 +17,10 @@ then copy compiled plugin from directory `plugins` into rabbit plugins directory
 
 More details about plugin building see in RabbitMQ [Plugin Development Guide](https://www.rabbitmq.com/plugin-development.html).
 
+## Disclamer ##
+
+I am not expert in erlang (this was my first experience with the plugin). I took sources from headers exchange and random exchange plugin and managed implement this one. Would be glad for help, critic and pull requests.
+
 ## License ##
 
 See LICENSE.
