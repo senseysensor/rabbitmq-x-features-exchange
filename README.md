@@ -1,14 +1,18 @@
 # RabbitMQ X-Featrues Exchange Type #
 
-This plugin adds a __features exchange__ type to [RabbitMQ](http://www.rabbitmq.com). The exchange type is `x-features`. See question on SO: http://stackoverflow.com/q/40606942/1002036.
+This plugin adds a __features exchange__ type to [RabbitMQ](http://www.rabbitmq.com). The exchange type is `x-features`, much like [default rabbitMQ headers exchange](https://github.com/rabbitmq/rabbitmq-server/blob/master/src/rabbit_exchange_type_headers.erl) but with different behaviour. See [question on SO](http://stackoverflow.com/q/40606942/1002036).
+
+Shortly: consumers when bind to exchange, list their _features_ as bind arguments (for instance, `f1=true`, `country=US`). Arguments starting with _x-_ are ignored (are not used for routing). Publisher should list required features to process the message in headers. At least one header is required and headers starting with _x-_ are also ignored. All listed headers should exactly match binding arguments.
+
+Additionally is available exchange argument `pick_random` which if is set to `true` will choose random binding if more than one binding fits conditions (otherwise if false or ommitted message will be routed to all bindings).
 
 ## Installing ##
 
 Build from source:
-```
-make rabbitmq-components-mk
-make dist
-```
+
+    make rabbitmq-components-mk
+    make dist
+
 then copy compiled plugin from directory `plugins` into rabbit plugins directory (by default is `/usr/lib/rabbitmq/lib/rabbitmq_server-VERSION/plugins/`).
 
 More details about plugin building see in RabbitMQ [Plugin Development Guide](https://www.rabbitmq.com/plugin-development.html).
