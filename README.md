@@ -10,8 +10,7 @@ Additionally is available exchange argument `pick_random` which if is set to `tr
 
 Build from source:
 
-    make rabbitmq-components-mk
-    make dist
+    make rabbitmq-components-mk && make dist
 
 then copy compiled plugin from directory `plugins` into rabbit plugins directory (by default is `/usr/lib/rabbitmq/lib/rabbitmq_server-VERSION/plugins/`).
 
