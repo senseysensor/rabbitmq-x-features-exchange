@@ -1,7 +1,7 @@
 {application, rabbit_exchange_type_x_features,
  [
   {description, "RabbitMQ X-Features Exchange Plugin"},
-  {vsn, "3.6.5"},
+  {vsn, "3.7.14"},
   {modules, []},
   {registered, []},
   {env, []},
